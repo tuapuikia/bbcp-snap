@@ -1,0 +1,28 @@
+name: bbcp
+version: 15.02.03.01.1
+summary: bbcp is a point-to-point network file copy application.
+description: |
+  bbcp is a point-to-point network file copy application written by Andy Hanushevsky
+  at SLAC as a tool for the BaBar collaboration. It is capable of transferring files at approaching line speeds in the WAN.
+
+grade: devel
+confinement: devmode
+
+apps:
+  bbcp:
+    command: bbcp
+    plugs: [home, network, network-bind]
+
+parts:
+  bbcp:
+    source: https://github.com/tuapuikia/bbcp.git
+    source-tag: master
+    source-subdir: src
+    plugin: make
+    makefile: Makefile
+    build-packages:
+      - gcc
+      - g++
+      - cmake
+      - zlib1g-dev
+      - libssl-dev
