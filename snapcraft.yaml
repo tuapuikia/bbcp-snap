@@ -6,7 +6,7 @@ description: |
   at SLAC as a tool for the BaBar collaboration. It is capable of transferring files at approaching line speeds in the WAN.
 
 grade: devel
-confinement: devmode
+confinement: classic
 
 apps:
   bbcp:
